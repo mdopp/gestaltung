@@ -5,7 +5,7 @@ pages, Homes, Abstimmung, the archive, or a new one), when you are about to
 write a colour, a font size or a radius into a program's CSS, or when you
 change a token here.
 
-- **Status:** proposed, 2026-11-15
+- **Status:** accepted, 2026-11-15 (the owner, after the preview: „Mir reicht die Vorschau“)
 - **Deciders:** the owner (mdopp), on the question where the shared design
   should live: „Eigenes Paket“. Phase 2 (migrating the programs) waits for
   the owner's look at the preview.
