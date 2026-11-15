@@ -1,0 +1,51 @@
+/* gestaltung: base components (ADR 0001). Only tokens, no colour literals.
+   page · card · button · question · row · pill · empty */
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--bg)}
+[hidden]{display:none!important}
+[data-theme]{background:var(--bg);color:var(--ink)}
+
+/* page: one calm column, phone first, 16px gutter. */
+.page{margin:0 auto;max-width:var(--measure);padding:0 var(--space-4) var(--space-6);background:var(--bg);color:var(--ink);font:var(--text-m)/var(--leading) var(--font);-webkit-text-size-adjust:100%;overflow-wrap:anywhere}
+.page h1{font-size:var(--text-xl);font-weight:700;line-height:1.2;letter-spacing:-.01em;margin:var(--space-5) 0 var(--space-1)}
+.page h2{font-size:var(--text-s);font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:var(--space-5) 2px var(--space-2)}
+.page p{margin:var(--space-3) 0}
+.page a{color:var(--accent)}
+.muted{color:var(--muted)}
+
+/* card: one thing, on a surface. */
+.card{background:var(--card);border:1px solid var(--edge);border-radius:var(--radius-m);padding:var(--space-3) var(--space-4);margin:var(--space-2) 0;min-width:0}
+.card>:first-child{margin-top:0}.card>:last-child{margin-bottom:0}
+.card b,.card strong{font-weight:600}
+
+/* button: one main action (.button), the rest quiet (.button.quiet). */
+.button{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:var(--touch);padding:0 var(--space-4);border:1px solid var(--accent);border-radius:var(--radius-pill);background:var(--accent);color:var(--accent-ink);font:600 var(--text-m)/1.2 var(--font);text-decoration:none;cursor:pointer}
+.page a.button{color:var(--accent-ink)}
+.button.quiet,.page a.button.quiet{background:transparent;border-color:var(--edge);color:var(--ink)}
+.button:focus-visible,.row:focus-visible,.question button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.button:disabled{opacity:.5;cursor:default}
+
+/* question: the box asks one thing, the answers are buttons. */
+.question{background:var(--accent-soft);border:1px solid var(--edge);border-radius:var(--radius-m);padding:var(--space-4);margin:var(--space-3) 0}
+.question .ask{margin:0 0 var(--space-1);font-size:var(--text-l);font-weight:600;line-height:1.3}
+.question .why{margin:0 0 var(--space-3);color:var(--muted);font-size:var(--text-s)}
+.question .answers{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+
+/* row: one line in a list; name, a note, and state or action on the right. */
+.rows{list-style:none;margin:var(--space-2) 0;padding:0;background:var(--card);border:1px solid var(--edge);border-radius:var(--radius-m);overflow:hidden}
+.row{display:flex;align-items:center;gap:var(--space-3);min-height:calc(var(--touch) + var(--space-3));padding:var(--space-2) var(--space-4);color:var(--ink);text-decoration:none}
+.rows>.row+.row,.rows>li+li>.row{border-top:1px solid var(--line)}
+.row .what{flex:1 1 auto;min-width:0}
+.row .name{display:block;font-weight:600}
+.row .note{display:block;color:var(--muted);font-size:var(--text-s)}
+.row .end{flex:none;display:flex;align-items:center;gap:var(--space-2)}
+
+/* pill: a state in one or two words. */
+.pill{display:inline-flex;align-items:center;min-height:24px;padding:0 var(--space-3);border-radius:var(--radius-pill);background:var(--line);color:var(--muted);font-size:var(--text-s);font-weight:600;white-space:nowrap}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.bad{background:var(--bad-soft);color:var(--bad)}
+
+/* empty: nothing to do is good news, said quietly. */
+.empty{padding:var(--space-6) var(--space-4);text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-weight:600;font-size:var(--text-l);margin-bottom:var(--space-1)}

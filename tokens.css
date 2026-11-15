@@ -1,0 +1,85 @@
+/* gestaltung: the household's design tokens (ADR 0001).
+   Dark first, light when the device is, and either one forced with
+   data-theme="light" | "dark" on any element. Programs use these names and
+   carry no colour literals of their own.
+   --faint and --edge are for borders and icons, never for text. */
+:root,[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#070709;
+  --panel:#0c0c0e;
+  --card:#14141a;
+  --edge:rgba(255,255,255,.12);
+  --line:rgba(255,255,255,.07);
+  --ink:#f2f2f5;
+  --muted:#9aa0ae;
+  --faint:#6b7280;
+  --accent:#f97316;
+  --accent-ink:#070709;
+  --accent-soft:rgba(249,115,22,.14);
+  --ok:#10b981;
+  --ok-soft:rgba(16,185,129,.14);
+  --warn:#f59e0b;
+  --warn-soft:rgba(245,158,11,.14);
+  --bad:#ef5350;
+  --bad-soft:rgba(239,83,80,.14);
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){
+  color-scheme:light;
+  --bg:#f1f5f9;
+  --panel:#ffffff;
+  --card:#ffffff;
+  --edge:rgba(15,23,42,.14);
+  --line:rgba(15,23,42,.08);
+  --ink:#0f172a;
+  --muted:#5b6474;
+  --faint:#7c8596;
+  --accent:#c2410c;
+  --accent-ink:#ffffff;
+  --accent-soft:rgba(194,65,12,.10);
+  --ok:#047857;
+  --ok-soft:rgba(4,120,87,.10);
+  --warn:#a14a07;
+  --warn-soft:rgba(161,74,7,.10);
+  --bad:#b91c1c;
+  --bad-soft:rgba(185,28,28,.10);
+}}
+[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f1f5f9;
+  --panel:#ffffff;
+  --card:#ffffff;
+  --edge:rgba(15,23,42,.14);
+  --line:rgba(15,23,42,.08);
+  --ink:#0f172a;
+  --muted:#5b6474;
+  --faint:#7c8596;
+  --accent:#c2410c;
+  --accent-ink:#ffffff;
+  --accent-soft:rgba(194,65,12,.10);
+  --ok:#047857;
+  --ok-soft:rgba(4,120,87,.10);
+  --warn:#a14a07;
+  --warn-soft:rgba(161,74,7,.10);
+  --bad:#b91c1c;
+  --bad-soft:rgba(185,28,28,.10);
+}
+/* Type, spacing, radius: the same in both themes. */
+:root{
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --text-s:.85rem;
+  --text-m:1rem;
+  --text-l:1.2rem;
+  --text-xl:1.6rem;
+  --leading:1.5;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:24px;
+  --space-6:32px;
+  --radius-s:8px;
+  --radius-m:14px;
+  --radius-pill:999px;
+  --touch:44px;
+  --measure:40rem;
+}
